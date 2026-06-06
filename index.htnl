@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kavrėl Documentation</title>
 
+<style>
+.light {
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --text: #222;
+    --accent: rgb(165, 107, 74);
+}
+
+:root {
+    --bg: #1b1b1b;
+    --card: #2a2a2a;
+    --text: #f0f0f0;
+    --accent: rgb(165, 107, 74);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+header {
+    background: var(--accent);
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.note {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-left: 4px solid gold;
+    background: rgba(255, 255, 0, 0.1);
+    border-radius: 4px;
+}
+
+.note-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.card {
+    background: var(--card);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.5rem;
+    border: 1px solid #999;
+}
+
+.example {
+    background: rgba(100,100,100,0.1);
+    padding: 0.75rem;
+    border-left: 4px solid var(--accent);
+    margin: 0.5rem 0;
+}
+
+.conlang {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.gloss {
+    color: #777;
+    font-style: italic;
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.answer {
+    display: none;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(0,255,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    opacity: 0.7;
+}
+
+a {
+    color: var(--accent);
+}
+
+.light a {
+    color: #d6a07e;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kavrėl Documentation</h1>
+
+    <button onclick="toggleLightMode()">
+        Toggle Light Mode
+    </button>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h1>altentryz!</h1>
+
+        <p>
+            Kavrėl is an artlang I've been working on (and will continue to work on) based around the goal of semantic precision while being equally poetic (when needed) and occasionally confusing.
+        </p>
+
+        <div class="note">
+            <div class="note-title">New Here?</div>
+            Begin with lesson 1 and work through these as they're developed :)
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Lessons</h2>
+
+        <table>
+            <tr>
+                <th>Lesson</th>
+                <th>Topic</th>
+            </tr>
+
+            <tr>
+                <td><a href="1.html">Lesson 1</a></td>
+                <td>The Basics</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- <div class="card">
+        <h2>Reference Materials</h2>
+
+        <ul>
+            <li><a href="dictionary.html">Dictionary</a></li>
+            <li><a href="grammar.html">Grammar Reference</a></li>
+            <li><a href="phonology.html">Phonology</a></li>
+            <li><a href="texts.html">Sample Texts</a></li>
+        </ul>
+
+        <div class="note">
+            These pages are intended as references and may contain concepts
+            not yet covered in the lessons.
+        </div>
+    </div> -->
+
+    <div class="card">
+        <h2>A Quick Demo</h2>
+
+        <div class="example">
+            <div class="conlang">
+                ta ȧnȧdėnfyntje dėlzarm yd vėn daljavadzėnaza eldzėn.
+            </div>
+
+            <div class="gloss">
+                NP traitor-VOC self-GEN TRANS COM spider-love-PL-ACC 1SG-move-FAC-GNO-PRES
+            </div>
+
+            <div>
+                <a href="https://bullofheavendc.bandcamp.com/album/299-self-traitor-i-do-bring-the-spider-love">[299:] Self-Traitor, I Do Bring the Spider Love</a>
+            </div>
+        </div>
+
+        <p>
+            Don't worry if this sentence seems complicated; every part of
+            it will be explained throughout the lessons.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>About the Language</h2>
+
+        <p>
+            Kavrėl is an ongoing artlang project of mine. This site serves as both a
+            learning resource and a complete reference for its grammar,
+            vocabulary, phonology, and historical development.
+        </p>
+
+        <div class="note">
+            <div class="note-title">Work In Progress</div>
+            Some sections may change as the language continues to evolve.
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    Kavrėl Documentation
+</footer>
+
+<footer>
+    <p>© JSTRHLL, 1999 to eternity</p>
+</footer>
+
+<script>
+function toggleLightMode() {
+    document.body.classList.toggle("light");
+}
+
+function showAnswer(id) {
+    const answer = document.getElementById(id);
+
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+    } else {
+        answer.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
