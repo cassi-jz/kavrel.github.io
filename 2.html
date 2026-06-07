@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavrėl - Nouns 1</title>
+
+    <style>
+        .light {
+            --bg: #f4f4f4;
+            --card: #ffffff;
+            --text: #222;
+            --accent: rgb(165, 107, 74);
+        }
+
+        :root {
+            --bg: #1b1b1b;
+            --card: #2a2a2a;
+            --text: #f0f0f0;
+            --accent: rgb(165, 107, 74);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: 0.3s;
+        }
+
+        header {
+            background: var(--accent);
+            color: white;
+            padding: 1rem;
+        }
+
+        nav {
+            margin-top: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        .note {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-left: 4px solid gold;
+            background: rgba(255, 255, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .note-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 0.5rem;
+            border: 1px solid #999;
+        }
+
+        .example {
+            background: rgba(100, 100, 100, 0.1);
+            padding: 0.75rem;
+            border-left: 4px solid var(--accent);
+            margin: 0.5rem 0;
+        }
+
+        .conlang {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .gloss {
+            color: #777;
+            font-style: italic;
+        }
+
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(0, 255, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Kavrėl Documentation</h1>
+
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./1.html">Previous</a>
+            <!-- <a href="./3.html">Next</a>-->
+        </nav>
+
+        <button onclick="toggleLightMode()">
+            Toggle Light Mode
+        </button>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h1>Lesson 2: Nominative, Accusative & Genitive Nouns</h1>
+
+            <p>
+                If you're familiar with noun declensions, you probably know that many languages base them off of the
+                gender of a noun (e.g. Russian, Latin, French, et cerera). However, in Kavrėl, the declension a noun
+                falls into simply depends on its root ending. Each declension is made up of eleven cases (all of which
+                shall be covered in time. It's easier than it seems, trust me), & five numbers. To elaborate on the
+                latter, English contains two: singular & plural. In Kavrėl, alongside these, we use paucal (a few of a
+                thing, relative to the whole), relevant plural (every one of a thing that is relevant to a statement,
+                context is almost always needed), & absolute plural (every one of a thing that exists).
+            </p>
+            <div class="note">
+                In terms of the relevant & absolute plurality, the plural number is used, and a particle marks this! (A
+                guide on particles will come soon.) Also, the nominative singular never uses an affix, regardless of
+                declension.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>First Declension</h2>
+            <h3>t, d, k, m, n, l, r, j</h3>
+            <table style="text-align: center;">
+                <tr>
+                    <th>Case</th>
+                    <th>Singular (SG)</th>
+                    <th>Paucal (PAU)</th>
+                    <th>Plural (PL)</th>
+                </tr>
+
+                <tr>
+                    <td>NOM</td>
+                    <td>-</td>
+                    <td>ės</td>
+                    <td>es</td>
+                </tr>
+
+                <tr>
+                    <td>ACC</td>
+                    <td>aza</td>
+                    <td>ȧz</td>
+                    <td>az</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.POSS</td>
+                    <td>yv</td>
+                    <td>yvas</td>
+                    <td>yva</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.ATTR</td>
+                    <td>yvra</td>
+                    <td>yvars</td>
+                    <td>yvar</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.OBJ</td>
+                    <td>yf</td>
+                    <td>yfas</td>
+                    <td>yfa</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card">
+            <h2>Second Declension</h2>
+            <h3>f, v, s, z, h, th, zh, dz</h3>
+            <table style="text-align: center;">
+                <tr>
+                    <th>Case</th>
+                    <th>SG</th>
+                    <th>PAU</th>
+                    <th>PL</th>
+                </tr>
+
+                <tr>
+                    <td>NOM</td>
+                    <td>-</td>
+                    <td>ald</td>
+                    <td>al</td>
+                </tr>
+
+                <tr>
+                    <td>ACC</td>
+                    <td>em</td>
+                    <td>elm</td>
+                    <td>el</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.POSS</td>
+                    <td>am</td>
+                    <td>ȧ</td>
+                    <td>a</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.ATTR</td>
+                    <td>arm</td>
+                    <td>ȧr</td>
+                    <td>ar</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.OBJ</td>
+                    <td>alm</td>
+                    <td>ȧlv</td>
+                    <td>alv</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="card">
+            <h2>Third declension</h2>
+            <h3>y, i, e, a, ȧ, o, ė, ȯ</h3>
+            <table style="text-align: center;">
+                <tr>
+                    <th>Case</th>
+                    <th>SG</th>
+                    <th>PAU</th>
+                    <th>PL</th>
+                </tr>
+
+                <tr>
+                    <td>NOM</td>
+                    <td>-</td>
+                    <td>tala</td>
+                    <td>til</td>
+                </tr>
+
+                <tr>
+                    <td>ACC</td>
+                    <td>tre</td>
+                    <td>trėd</td>
+                    <td>trė</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.POSS</td>
+                    <td>he</td>
+                    <td>heta</td>
+                    <td>het</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.ATTR</td>
+                    <td>hera</td>
+                    <td>hetar</td>
+                    <td>hetra</td>
+                </tr>
+
+                <tr>
+                    <td>GEN.OBJ</td>
+                    <td>hė</td>
+                    <td>heda</td>
+                    <td>hed</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="card">
+            <h2>The Genitive Case</h2>
+
+            <p>In general, the genitive case is used to mark one word (often a noun) modifying another. In English, the
+                two types of genitives that are explicitly marked are the Saxon- (x's y, posessive) and the periphrasic-
+                (x of y, prepositional). Here, we'll be using three:
+                <br>
+                <br> - The posessive genitive (GEN.POSS) is used to show ownership or association (e.g. "John's book").
+                <br>
+                <br> - The attributive genitive (GEN.ATTR) is used to define/classify the head noun, or show a
+                characteristic (e.g. "House of Leaves," "summer's night")
+                <br>
+                <br> - The objective genitive (GEN.OBJ) is a weird one. It is used when the genitive noun functions as
+                the object of an implied action expressed by the head noun, but within a nominalized noun phrase. For
+                example, “the fear of death” functions as a single noun phrase, but “death” is the thing being feared.
+                Thus, it can be paraphrased as “death is feared.” On the homepage, I gave a translation which included
+                “traitor-VOC self-GEN.OBJ.” It does not refer to someone who has betrayed an entity called “the self,”
+                but instead treats “traitor of the self” as a compressed noun phrase meaning one who betrays the self,
+                where “self” functions as the object of the implied verb “betray.”
+            </p>
+        </div>
+
+        <div class="card">
+
+            <h2>Nominative And Accusative</h2>
+
+            <p> Moving on, the remaining two cases are quite a bit easier to cover. In a given sentence, the subject
+                (nominative) performs an action, & the direct object (accusative) receives an action. I'll give you an
+                example, but it may not be necessary. If I were to say "he loves cats," "he" is nominative because it is
+                the thing that loves, & "cats" is accusative because they are the things being loved.</p>
+            <div class="note">
+                Earlier, I mentioned noun phrases & head nouns. A noun phrase (abbreviated & glossed as NP) is a group
+                of words centered on a single head noun; this can range in size from the head noun "cat," to something
+                such as "a general statement," where "statement" acts as the head noun & all other elements in the NP
+                are dependent on it, to something far larger, such as "that exceedingly obvious truth which you cannot,
+                for the life of you, accept, no matter the degree at which your feigned ignorance boosts your
+                self-esteem when it comes to coping with this issue" (here, "truth" is the head noun; despite reaching a
+                length of 34 words, it still functions as a single NP). But I digress; in Kavrėl, each NP is generally
+                prefaced by "ta," for the sake of coherency. There are several different alternatives, mainly used in
+                terms of animacy and whether or not it's a proper noun, but for now, don't worry about it.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Recap</h2>
+            <pre>For the last 3, x is the head noun and y is the genitive.</pre>
+            <table style="text-align: center;">
+                <tr>
+                    <th>Case</th>
+                    <th>Example</th>
+                </tr>
+
+                <tr>
+                    <td>NOM</td>
+                    <td>x affects y</td>
+                </tr>
+                <tr>
+                    <td>ACC</td>
+                    <td>x is affected by y</td>
+                </tr>
+                <tr>
+                    <td>GEN.POSS</td>
+                    <td>y has/owns x</td>
+                </tr>
+                <tr>
+                    <td>GEN.ATTR</td>
+                    <td>y characterizes x</td>
+                </tr>
+                <tr>
+                    <td>GEN.OBJ</td>
+                    <td>x targets y</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card">
+            <h2>Examples</h2>
+
+            <div class="example">
+                <div class="conlang">
+                    ta tre ezam.
+                </div>
+
+                <div class="gloss">
+                    NP earth-NOM center-GEN.POSS
+                </div>
+
+                <div>
+                    "The Earth's core."
+                </div>
+            </div>
+
+            <div class="example">
+                <div class="conlang">
+                    ta tyn atynyvra.
+                </div>
+
+                <div class="gloss">
+                    NP warmth-NOM fire-GEN.ATTR
+                </div>
+
+                <div>
+                    "The warmth of the fire."
+                </div>
+            </div>
+
+            <div class="example">
+                <div class="conlang">
+                    ta tanet milinyf.
+                </div>
+
+                <div class="gloss">
+                    NP experience-NOM odd-GEN.OBJ
+                </div>
+
+                <div>
+                    “The experience of existing in a state where one's surroundings are misaligned with oneself.”
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <h2>Lexical Practice</h2>
+
+            <p>
+                Translate:
+            </p>
+
+            <blockquote>
+                "ta lydz etvyhe (was spilt)." <br>
+                "atyn ezyv (can lead to situations which produce) tynes" <br>
+            </blockquote>
+
+            <button onclick="showAnswer('a1')">
+                Reveal Answer
+            </button>
+
+            <div id="a1" class="answer">
+                The rat's water was spilt. <br>
+                Earth's warmth can lead to fires.
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        Kavrėl - Nouns 1
+    </footer>
+
+    <script>
+        function toggleLightMode() {
+            document.body.classList.toggle("light");
+        }
+
+        function showAnswer(id) {
+            const answer = document.getElementById(id);
+
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+    </script>
+    <footer>
+        <p>© JSTRHLL, 1999 to eternity </p>
+    </footer>
+</body>
+
+</html>
